@@ -1,0 +1,170 @@
+package introduction;
+
+//package tests;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.openqa.selenium.Keys;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.time.Duration;
+import java.util.List;
+
+public class UdemyTest1 {
+
+    // STEP 1 + 2
+    public static void step1_and_2(WebDriver driver, WebDriverWait wait) {
+
+        driver.get("https://www.udemy.com/");
+
+        Assert.assertTrue(driver.getTitle().toLowerCase().contains("udemy"));
+        System.out.println("Step 1 passed: Udemy opened successfully");
+
+        try {
+            WebElement acceptBtn = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//button[contains(text(),'Accept')]")
+                    )
+            );
+            acceptBtn.click();
+            System.out.println("Step 2 passed: Cookies accepted");
+        } catch (Exception e) {
+            System.out.println("Step 2: No cookie popup appeared");
+        }
+    }
+
+    // STEP 3
+    public static void step3(WebDriver driver, WebDriverWait wait) throws InterruptedException {
+
+        WebElement searchBox = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.name("q"))
+        );
+
+        searchBox.sendKeys("Python");
+        searchBox.sendKeys(Keys.ENTER);
+
+        System.out.println("Step 3 passed: Search performed");
+
+        Thread.sleep(5000);
+    }
+
+    // STEP 4 + 5
+    public static void step4_and_5(WebDriver driver, WebDriverWait wait) throws InterruptedException {
+
+        wait.until(ExpectedConditions.urlContains("search"));
+
+        Thread.sleep(5000);
+
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,800)");
+
+        Thread.sleep(3000);
+
+        List<WebElement> courses = driver.findElements(
+                By.xpath("//a[contains(@href,'/course/')]")
+        );
+
+        int count = courses.size();
+
+        System.out.println("Total course cards: " + count);
+
+        Assert.assertTrue(count > 1, "Course cards not loaded");
+
+        System.out.println("Step 4 passed: Course cards verified" + count);
+
+        try {
+            WebElement ratingBtn = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//button[.//span[text()='Ratings']]")
+                    )
+            );
+            ratingBtn.click();
+
+            Thread.sleep(2000);
+
+            WebElement ratingOption = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//label[contains(.,'4.5')]")
+                    )
+            );
+
+            ratingOption.click();
+            driver.findElement(By.tagName("body")).click();
+
+            System.out.println("Step 5 passed: Rating filter applied");
+
+        } catch (Exception e) {
+            System.out.println("Step 5: Filter not found (optional step)");
+        }
+
+        Thread.sleep(5000);
+    }
+
+    // STEP 6 + 7
+    public static void step6_and_7(WebDriver driver, WebDriverWait wait) throws InterruptedException {
+
+        WebElement firstCourse = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.xpath("(//a[contains(@href,'/course/')])[1]")
+                )
+        );
+
+        String parentWindow = driver.getWindowHandle();
+
+        firstCourse.click();
+
+        for (String window : driver.getWindowHandles()) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                break;
+            }
+        }
+
+        System.out.println("Step 6 passed: First course opened");
+
+        Thread.sleep(5000);
+
+        WebElement title = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1"))
+        );
+
+        WebElement instructor = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//a[contains(@href,'user')]")
+                )
+        );
+
+        System.out.println("Course Title: " + title.getText());
+        System.out.println("Instructor: " + instructor.getText());
+
+        Assert.assertTrue(title.isDisplayed(), "Title not visible");
+        Assert.assertTrue(instructor.isDisplayed(), "Instructor not visible");
+
+        System.out.println("Step 7 passed: Course details verified");
+    }
+
+    // MAIN TEST
+    @Test
+    public void runAllSteps() throws InterruptedException {
+
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        driver.manage().window().maximize();
+
+        step1_and_2(driver, wait);
+        step3(driver, wait);
+        step4_and_5(driver, wait);
+        step6_and_7(driver, wait);
+
+        driver.quit();
+    }
+}
