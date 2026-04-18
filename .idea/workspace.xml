@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd79dc32-0b93-4a7e-884e-5c8cc729bd01" name="Changes" comment="Initial Maven project setup">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Filtering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Retrieve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Selection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/udemyTest2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pop_handle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,65 +30,44 @@
     &quot;assignee&quot;: &quot;ishi142005&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Krati0709/Udemy-Testing.git&quot;,
-    &quot;accountId&quot;: &quot;5c1cb940-3fef-419d-8a94-224e13baecc0&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Krati0709/Udemy-Testing",
+    "accountId": "37893f4d-c66d-4af1-9f6e-bdcf1f63976a"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8,
-  &quot;fromUser&quot;: false
-}</component>
-  <component name="ProjectId" id="3CWRzPaWjvaHdSNwgwTh0QtsHWl" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3CWWC3cd1q2APPsbp0gxTcysKvs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Filtering.executor": "Run",
-    "Application.Selection.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "TestNG.Course_validation.executor": "Run",
+    "TestNG.Pop_handle.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Dell/Udemy-Testing",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dell\Udemy-Testing\src\test\java" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Selection">
-    <configuration name="Filtering" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Filtering" />
-      <module name="testing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Selection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Selection" />
-      <module name="testing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Pop_handle">
     <configuration name="Course_validation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Udemy-Testing" />
       <option name="PACKAGE_NAME" value="" />
@@ -103,10 +79,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Pop_handle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Pop_handle" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Selection" />
-        <item itemvalue="Application.Filtering" />
+        <item itemvalue="TestNG.Pop_handle" />
         <item itemvalue="TestNG.Course_validation" />
       </list>
     </recent_temporary>
@@ -122,10 +108,11 @@
     </task>
     <task active="true" id="Default" summary="Default task">
       <changelist id="dd79dc32-0b93-4a7e-884e-5c8cc729bd01" name="Changes" comment="Initial Maven project setup" />
-      <created>1776499601736</created>
+      <created>1776501677206</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776499601736</updated>
+      <updated>1776501677206</updated>
+      <workItem from="1776501679858" duration="305000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
