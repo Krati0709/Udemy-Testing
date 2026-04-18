@@ -25,10 +25,16 @@ public class Selection {
         // Take Screenshot
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-        File dest = new File("Udemy_screenshot.png");
-        Files.copy(src.toPath(), dest.toPath());
+        String filename = "Udemy_" + System.currentTimeMillis() + ".png";
+        File dest = new File(filename);
 
-        System.out.println("Screenshot saved");
+        Files.copy(
+                src.toPath(),
+                dest.toPath(),
+                java.nio.file.StandardCopyOption.REPLACE_EXISTING
+        );
+
+        System.out.println("Screenshot saved: " + filename);
 
         driver.quit();
     }
