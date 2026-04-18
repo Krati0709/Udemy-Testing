@@ -1,7 +1,3 @@
-package introduction;
-
-//package tests;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
@@ -14,9 +10,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import java.util.List;
 
-public class UdemyTest1 {
+public class RunningFile {
 
-    // STEP 1 + 2
     public static void step1_and_2(WebDriver driver, WebDriverWait wait) {
 
         driver.get("https://www.udemy.com/");
@@ -37,7 +32,6 @@ public class UdemyTest1 {
         }
     }
 
-    // STEP 3
     public static void step3(WebDriver driver, WebDriverWait wait) throws InterruptedException {
 
         WebElement searchBox = wait.until(
@@ -52,7 +46,6 @@ public class UdemyTest1 {
         Thread.sleep(5000);
     }
 
-    // STEP 4 + 5
     public static void step4_and_5(WebDriver driver, WebDriverWait wait) throws InterruptedException {
 
         wait.until(ExpectedConditions.urlContains("search"));
@@ -103,7 +96,6 @@ public class UdemyTest1 {
         Thread.sleep(5000);
     }
 
-    // STEP 6 + 7
     public static void step6_and_7(WebDriver driver, WebDriverWait wait) throws InterruptedException {
 
         WebElement firstCourse = wait.until(
